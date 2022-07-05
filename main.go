@@ -107,7 +107,7 @@ func main() {
 	//db.LogMode(true)
 	setup(db)
 	var users []User
-	db.First(&users, "Name = ?", "Mustii")
+	db.Last(&users, "Name = ?", "Mustii")
 	for i, user := range users {
 		fmt.Println("Name: ", user.Name, "Email: ", user.Email, "index -> ", i)
 		//fmt.Println("Newuser -> ", i)
